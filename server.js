@@ -29,7 +29,7 @@ app.post("/webhook", (req, res) => {
 
   // Check the Incoming webhook message
   console.log(JSON.stringify(req.body, null, 2));
- axios.post("https://git.taqin.tech:7655/a", {
+ axios.post("https://git.taqin.tech:1337/webhook", {
     data : req.body
   }).then(function(data){
    console.log(data)
