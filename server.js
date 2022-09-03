@@ -29,7 +29,7 @@ app.post("/webhook", (req, res) => {
 
   // Check the Incoming webhook message
   console.log(JSON.stringify(req.body, null, 2));
- axios.post("https://git.taqin.tech:1337/webhook", {
+ axios.post("https://git.taqin.tech:7655/a", {
     data : req.body
   }).then(function(data){
    console.log(data)
@@ -76,8 +76,8 @@ app.get("/webhook", (req, res) => {
    * UPDATE YOUR VERIFY TOKEN
    *This will be the Verify Token value when you set up webhook
   **/
- 
-  const verify_token = 123;
+
+  const verify_token = process.env.VERIFY_TOKEN;
 
   // Parse params from the webhook verification request
   let mode = req.query["hub.mode"];
